@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    background: #292C34;
+    font-family: Asap, sans-serif;
+}
+
+header {
+    background: white;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #292C34;
+    text-align: center;
+}
+
+.pontuação {
+    border: 3px solid #e74c3c;
+    border-radius: 5px;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    padding: 15px 0;
+    margin: 20px auto;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pontuação__emblema {
+    background: #e74c3c;
+    font-size: 15px;
+    padding: 5px;
+}
+
+#você-label {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#comp-label {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.resultado > p{
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.resultado__display {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultado__display > img {
+    height: 120px;
+    margin: 0 10px;
+}
+
+.resultado__display > span {
+    color: white;
+    font-size: 30px;
+}
+
+.opções {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opções__opção {
+    margin: 25px;
+    padding: 10px;
+    
+}
+.opções__opção > img {
+    background-color: #3498db;
+    height: 80px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50%;border: 2px solid white;
+    transform: scale(1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.opções__opção > img:hover {
+    cursor: pointer;
+    background-color: #e74c3c;
+    transform: scale(1.1);
+}
+
+#mensagem {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
