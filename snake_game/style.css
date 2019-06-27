@@ -1,0 +1,469 @@
+:root {
+    --cor1: rgb(9, 17, 28);
+    --cor2: rgb(29, 53, 87);
+    --cor22: rgb(119, 173, 207);
+    --cor3: rgb(69, 123, 157);
+    --cor4: rgb(241, 250, 238);
+    --cor5: rgb(160, 0, 15);
+    --cor6: rgb(190, 0, 15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+    color: var(--cor4);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: var(--cor22);
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5% 2%;
+    position: relative;
+    filter: blur(0);
+    transition: all 0.5s;
+}
+
+/********** HEADER **********/
+    .header {
+        background: var(--cor1);
+    }
+        .header > h1 {
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            text-align: center;
+            font-size: 280%;
+            font-weight: 300;
+            padding: 5px;
+        }
+/********** FOOTER **********/
+.footer {
+    background: var(--cor2);
+}
+    .footer p {
+        padding: 8px 0;
+        text-align: center;
+        letter-spacing: 2px;
+        font-size: 75%;
+    }
+/********** CONTENT **********/
+.content {
+    display: flex;
+}
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        background: linear-gradient(var(--cor1), var(--cor2));
+        width: 160px;
+        height: 506px;
+    }
+    .painel {
+        background-color: rgba(0,0,0,0.1);
+        width: 100%;
+        border-bottom: 2px solid var(--cor4);
+        cursor: default;
+    }
+        .painel h2 {
+            text-align: center;
+            padding: 10px 5px;
+            white-space: nowrap;
+            font-size: 130%;
+        }
+        .painel span {
+            font-size: 250%;
+            text-align: center;
+            padding: 0 10px 5px 10px;
+            display: inline-block;
+            width: 100%;
+            font-weight: 300;
+        }
+        /***** NAV LEFT *****/
+        .nav-left {
+            justify-content: space-evenly;
+        }
+            .btn {
+                border: none;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                width: 100%;
+                background-color: var(--cor5);
+                padding: 10px 15px 10px 10px;
+                font-family: inherit;
+                color: inherit;
+                letter-spacing: 0.8px;
+                font-size: 150%;
+                outline: none;
+                transition: all 0.3s ease-in;
+                box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.75);
+            }
+            .btn:hover {
+                background-color: var(--cor6);
+            }
+                .btn > i {
+                    padding: 0 5px;
+                    font-size: 90%;
+                }
+                #start-icon {
+                    display: none;
+                }
+                .btn > span {
+                    display: inline-block;
+                    margin: 0 auto;
+                }
+            #settings {
+                background-color: var(--cor5);
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                font-size: 210%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                transition: all 0.3s ease-in;
+                box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.75);
+            }
+            #settings:hover {
+                animation: rotate 2s linear infinite both;
+                background-color: var(--cor6);
+            }
+                @keyframes rotate {
+                    0% { transform: rotate(0); }
+                    100% {transform: rotate(360deg); }
+                }
+        /***** NAV RIGHT *****/
+        .nav-right {
+            justify-content: space-between;
+        }
+    /***** GAME *****/
+    .game {
+        position: relative;
+        height: 500px;
+    }
+        #stage {
+            background-color: rgb(0, 0, 0);
+            border: 3px solid transparent;
+            transition: all 0.5s;
+        }
+        .stage-wall {
+            border: 3px solid var(--cor6) !important;
+        }
+    .timer {
+        position: absolute;
+        font-weight: 400;
+        margin: 0 auto;
+        left: 50%;
+        top: 50%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.2s;
+    }
+        .timer #timer-sec {
+            text-align: center;
+            font-weight: 600;
+            font-size: 600%;
+            padding: 5px;
+            opacity: 0.4;
+        }
+
+/********* SETTINGS *********/
+.settings-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: all 0.2s;
+}
+    
+.settings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--cor1);
+    transform: translate(-50%, -50%);
+    background-color: var(--cor4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+}
+    .settings h2 {
+        margin-bottom: 40px;    
+        font-weight: 300;
+        font-size: 220%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+.btn-ok {
+    width: 160px;
+    color: var(--cor4);
+    background-color: var(--cor3);
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.btn-ok:hover {
+    background-color: var(--cor2);
+}
+
+/********* DROPDOWN **********/
+.dificuldade {
+    padding: 20px;
+    width: 200px;
+    font-size: 110%;
+    color: var(--cor4);
+}
+    .dificuldade-wrapper {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        width: 100%;
+        background-color: var(--cor2);
+        padding: 5px;
+        transition: all 0.3s;
+
+    }
+        #dificuldade {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        .dificuldade-wrapper > i {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+    .list {
+        width: 160px;
+        list-style: none;
+        display: none;
+        position: absolute;
+        background-color: var(--cor3);
+        z-index: 10;
+    }
+        .list li {
+            cursor: pointer;
+            padding: 5px 0;
+            margin: 2px 0;
+            transition: all 0.3s;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .list li:hover {
+            background: var(--cor2);
+        }
+
+    .close-wrapper {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        font-size: 110%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .close-wrapper:hover {
+        animation: rotate 0.3s linear;
+    }
+
+/********** SETTINGS - WALL **********/
+.wall-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+.wall {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 120%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .wall input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: var(--cor3);
+    transition: all 0.3s;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .wall:hover input ~ .checkmark {
+    background-color: var(--cor2);
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .wall input:checked ~ .checkmark {
+    background-color: var(--cor2);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .wall input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .wall .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--cor4);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+/********* RESUME *********/
+.resume-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: all 0.2s;
+}
+    .resume {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--cor4);
+    }
+        .resume h1 {
+            font-size: 200px;
+            text-align: center;
+        }
+/********* SUMMARY *********/
+.summary-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: all 0.2s;
+}
+    .summary {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: var(--cor1);
+        transform: translate(-50%, -50%);
+        background-color: var(--cor4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 40px;
+        width: 470px;
+    }
+        .summary h2 {
+            margin-bottom: 40px;    
+            font-weight: 300;
+            font-size: 220%;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .summary > ul {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+            .summary > ul > li {
+                display: flex;
+                padding: 10px 0;
+                width: 100%;
+                justify-content: space-between;
+                border-bottom: 1px solid var(--cor1);
+            }
+                .summary > ul > li > span {
+                    text-align: center;
+                    display: inline-block;
+                }
+                .summary > ul > li > span:last-of-type {
+                    /* margin-left: 200px; */
+                    font-size: 110%;
+                    font-weight: 600;
+                }
+
+.scale-1 {
+    transform: scale(1);
+}
+.scale-0 {
+    transform: scale(0);
+}
+.opacity-1 {
+    opacity: 1;
+}
+.opacity-0 {
+    opacity: 0;
+    pointer-events: none;
+}
+.blur {
+    filter: blur(5px);
+}

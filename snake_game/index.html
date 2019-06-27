@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Snake Game by Caio Quirino</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="The best snake game ever">
+  <meta name="keywords" content="snake,game,play,free game,snake game">
+  <meta name="author" conent="Caio Quirino">
+
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+
+</head>
+
+<body>
+<section class="container">
+  <div>
+  <main class="board">
+    <header class="header">
+      <h1>Snake Game</h1>
+    </header><!--header-->
+    <section class="content">
+
+      <nav class="nav nav-left">
+        <button class="btn" id="start">
+          <i id="start-icon" class="icon ion-md-pause"></i>
+          <span id="start-name">START!</span>
+        </button>
+        <button class="btn" id="stop">
+          <i class="icon ion-md-square"></i>
+          <span>STOP</span>
+        </button>
+        <i id="settings" class="icon ion-md-settings"></i>
+      </nav><!--nav-left-->
+      <section class="game">
+        <canvas id="stage" width="500px" height="500px"></canvas>
+        <div class="timer">
+          <span id="timer-sec">--</span>
+        </div><!--timer-->
+      </section><!--game-->
+      <nav class="nav nav-right">
+        <div class="high-score painel">
+          <h2>High Score</h2>
+          <span id="high-score">0</span>
+        </div><!--high-score painel-->
+        <div class="score painel">
+          <h2>Score</h2>
+          <span id="pontos">0</span>
+        </div><!--score painel-->
+        <div class="comida painel">
+          <h2>Length</h2>
+          <span id="comida">0</span>
+        </div><!--comida painel-->
+      </nav><!--nav-right-->
+    </section><!--content-->
+    <footer class="footer">
+      <p>Copyright &copy; 2019 by Caio Quirino. All rights reserved.</p>
+    </footer><!--footer-->
+  </main><!--board-->
+
+  <div class="settings-wrapper">
+      <section class="settings">
+        <h2>Options</h2>
+        <div class="wall-wrapper">
+          <label title="Boost your score!" class="wall">Wall
+            <input id="wall" type="checkbox">
+            <span class="checkmark"></span>
+          </label><!--wall-->
+        </div><!--wall-wrapper-->
+        <div class="dificuldade">
+          <div class="dificuldade-wrapper">
+            <span id="dificuldade">Medium</span>
+            <i id="dificuldade-arrow" class="icon ion-md-arrow-dropdown"></i>
+          </div>
+          <ul class="list">
+            <li id="easy">Easy</li>
+            <li id="medium">Medium</li>
+            <li id="hard">Hard</li>
+            <li id="impossible">Very Hard</li>
+          </ul><!--list-->
+        </div><!--dificuldade-->
+        <button class="btn btn-ok">OK</button>
+        <i class="icon ion-md-close close-wrapper"></i>
+      </section><!--settings -->
+    </div><!--settings-wrapper-->
+
+    <div class="resume-wrapper">
+      <section class="resume">
+        <h1 id="resume-timer">3</h1>
+      </section><!--resume -->
+    </div><!--resume-wrapper-->
+    <div class="summary-wrapper">
+      <section class="summary">
+        <h2>Summary</h2>
+        <ul class="summary-list">
+          <li>
+            <span>Difficulty</span>
+            <span id="summary-difficulty">Medium</span>
+          </li>
+          <li>
+            <span>Wall</span>
+            <span id="summary-wall">No</span>
+          </li>
+          <li>
+            <span>Elapsed Time</span>
+            <span id="summary-elap-time">09:29</span>
+          </li>
+          <li>
+            <span>Length</span>
+            <span id="summary-length">15</span>
+          </li>
+          <li>
+            <span>Accuracy</span>
+            <span id="summary-acc">87,50%</span>
+          </li>
+          <li>
+            <span>Score</span>
+            <span id="summary-score">423</span>
+          </li>
+        </ul>
+        <button class="btn btn-ok">OK</button>
+        <i class="icon ion-md-close close-wrapper"></i>
+      </section><!--resume -->
+    </div><!--resume-wrapper-->
+  </div>
+</section><!--container-->
+  
+<script src="script.js"></script>
+</body>
+
+</html>
