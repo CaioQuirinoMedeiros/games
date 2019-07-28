@@ -122,9 +122,6 @@ let budgetController = (function() {
         return current.getPercentage();
       });
       return allPercentages;
-    },
-    testing: function() {
-      console.log(data);
     }
   };
 })();
@@ -398,7 +395,6 @@ let controller = (function(budgetCtrl, UICtrl) {
 
   return {
     init: function() {
-      console.log("started");
       UICtrl.displayMonth();
       UICtrl.displayBudget({
         budget: 0,
