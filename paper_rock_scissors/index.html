@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta charset='utf-8'>
-    <link href='style.css' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Asap:400,500,700" rel="stylesheet">
-    <title>Pedra, Papel e Tesoura</title>
+  <head>
+    <meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Asap:400,500,700"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="images/paper_rock_scissors_favicon.ico" />
 
-</head>
+    <title>Paper, Rock and Scissors</title>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Pedra, Papel e Tesoura</h1>
-
+      <h1>Pedra, Papel e Tesoura</h1>
     </header>
 
-    <div class='pontuação'>
-        <div class='pontuação__emblema' id='você-label'>Você</div>
-        <span id='pontuação__você'>0</span>:<span id='pontuação__comp'>0</span>
-        <div class='pontuação__emblema' id='comp-label'>Comp</div>
+    <div class="pontuação">
+      <div class="pontuação__emblema" id="você-label">Você</div>
+      <span id="pontuação__você">0</span>:<span id="pontuação__comp">0</span>
+      <div class="pontuação__emblema" id="comp-label">Comp</div>
     </div>
 
-    <div class='resultado'>
-        <p id='resultado__texto'>Papel cobre a pedra. Você ganhou!</p>
-        <div class='resultado__display'>
-            <img id='resultado__display--você' src='imagens/papel.png'>
-            <span>vs</span>
-            <img id='resultado__display--comp' src='imagens/pedra.png'>
-        </div>
+    <div class="resultado">
+      <p id="resultado__texto">Papel cobre a pedra. Você ganhou!</p>
+      <div class="resultado__display">
+        <img id="resultado__display--você" src="images/papel.png" />
+        <span>vs</span>
+        <img id="resultado__display--comp" src="images/pedra.png" />
+      </div>
     </div>
 
-    <div class='opções'>
-        <div class='opções__opção' id='pedra'>
-            <img class='ola' id='ola' src='imagens/pedra.png'>
-        </div>
-        <div class='opções__opção' id='papel'>
-            <img src='imagens/papel.png'>
-        </div>
-        <div class='opções__opção' id='tesoura'>
-            <img src='imagens/tesoura.png'>
-        </div>
+    <div class="opções">
+      <div class="opções__opção" id="pedra">
+        <img class="ola" id="ola" src="images/pedra.png" />
+      </div>
+      <div class="opções__opção" id="papel">
+        <img src="images/papel.png" />
+      </div>
+      <div class="opções__opção" id="tesoura">
+        <img src="images/tesoura.png" />
+      </div>
     </div>
 
-    <p id='mensagem'>Faça sua jogada</p>
+    <p id="mensagem">Faça sua jogada</p>
 
-    <script src='app.js'></script>
-</body>
-
-
+    <script src="app.js"></script>
+  </body>
 </html>
